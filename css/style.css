@@ -41,6 +41,27 @@
     padding: 0px;
 }
 
+@media screen and (min-width: 500px) {
+
+    .left_graph {
+        position: relative;
+        right: 20em;
+    }
+
+    .right_graph {
+        position: relative;
+        left: 20em;
+    }
+
+
+    .side_p {
+        position: absolute;
+        left: 30em;
+        top: 25em;
+    }
+
+}
+
 #trends {
     padding: 10px 0;
 }

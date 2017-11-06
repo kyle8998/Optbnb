@@ -54,10 +54,7 @@
               <a class="nav-link js-scroll-trigger" href="#trends">Trends</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Graph 3</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Graph 3</a>
+              <a class="nav-link js-scroll-trigger" href="#about">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="https://github.com/kyle8998/Airbnb-Optimizer">Source Code</a>
@@ -125,7 +122,7 @@
 
 
 
-    <section id="trends">
+    <section id="map">
       <div class="container2">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -133,19 +130,18 @@
               <!-- <section id="gmap"> -->
             <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
                 <div id="map"></div>
-                <br>
-                <br>
+                <hr style="height:300pt; visibility:hidden;" />
                 <!-- <span top="1000px"> -->
 
               <!-- </section> -->
             <!-- First CoL bar graph -->
-            <div class="graph_area">
+            <!-- <div class="graph_area">
                 <h1> Trends </h1>
                 Average Prices For a One Room Airbnb in San Francisco
                 <canvas id="col_bar" width="500" height="300"></canvas>
-            </div>
+            </div> -->
 
-            <br>
+
             <!-- <h2>About this page</h2>
             <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
             <ul>
@@ -160,15 +156,32 @@
     </section>
 <br>
 
-    <section id="services" class="bg-light">
+    <section id="trends">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
 
-              <div class="graph_area">
-                  <canvas id="scatter" width="400" height="400"></canvas>
+              <!-- First CoL bar graph -->
+              <div class="graph_area left_graph">
+                  <h2>Trends</h2>
+                  Average Prices For a One Room Airbnb in San Francisco
+                  <canvas id="col_bar" width="500" height="400"></canvas>
               </div>
 
+              <p class="side_p"> hey </p>
+
+
+             <br>
+
+              <div class="graph_area right_graph">
+                  <canvas id="scatter" width="300" height="300"></canvas>
+              </div>
+
+<br>
+
+              <div class="graph_area left_graph">
+                  <canvas id="line-chart" width="800" height="450"></canvas>
+              </div>
             <!-- <h2>Services we offer</h2>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p> -->
           </div>
@@ -176,12 +189,13 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="about" class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Contact us</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+            <h2>About OptBnb</h2>
+            <p class="lead">OptBnb was designed to optimize your Airbnb listings to maximize your revenue at a click of a button!</p>
+            <p> Enter the details of your listing, and we present you the optimal price for your listing. We take in account many factors including neighbourhood, area density, rooms, and many more! Additionally we display the hottest trends with the latest Airbnb listings so you can see how you match up with other listings. We currently only have support for San Francisco listings, but we are working on expanding it.</p>
           </div>
         </div>
       </div>
@@ -192,7 +206,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright 2017 &copy; OptBnb</p>
       </div>
       <!-- /.container -->
     </footer>

@@ -200,3 +200,43 @@ function makeBubbles() {
 
   return arr;
 };
+
+
+
+
+//Line graph
+
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ["1 Bathroom", "2 Bathrooms", "3 Bathrooms", "4 Bathrooms"],
+    datasets: [{
+        data: [173.5482046,178.5694915,84.35714286,81.78571429],
+        label: "1 Bedroom",
+        borderColor: "#3e95cd",
+        fill: false
+      }, {
+        data: [289.5023202,399.6519481,494.0909091,],
+        label: "2 Bedrooms",
+        borderColor: "#8e5ea2",
+        fill: false
+      }, {
+        data: [411.9621212,450.5081433,766.5166667,4422.25],
+        label: "3 Bedrooms",
+        borderColor: "#3cba9f",
+        fill: false
+      }, {
+        data: [500.5882353,701.4520548,793.8,936.2857143],
+        label: "4 Bedrooms",
+        borderColor: "#e8c3b9",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Bedroom to Bathroom Price Ratio'
+    }
+  }
+});

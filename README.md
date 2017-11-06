@@ -7,6 +7,10 @@ Web application to visualize trends on Airbnb listings and optimize your own lis
 
 Python with Pandas, NumPy, and Jupyter Notebook
 
+Charts.js
+
+Google Maps API
+
 ### How to run locally
 
 will update when server added
