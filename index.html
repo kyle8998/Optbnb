@@ -34,6 +34,8 @@
 
     </style>
 
+
+
   </head>
 
   <body id="page-top">
@@ -164,11 +166,35 @@
               <!-- First CoL bar graph -->
               <div class="graph_area left_graph">
                   <h2>Trends</h2>
-                  Average Prices For a One Room Airbnb in San Francisco
-                  <canvas id="col_bar" width="500" height="400"></canvas>
+                  Average Prices For an Airbnb in San Francisco
+
+                  <div id="1room">
+                    <canvas id="col_bar" width="500" height="400"></canvas>
+                  </div>
+
+                  <div id="2room" style="display: none">
+                    <canvas id="col_bar2" width="500" height="400"></canvas>
+                  </div>
+
+                  <div id="3room" style="display: none">
+                    <canvas id="col_bar3" width="500" height="400"></canvas>
+                  </div>
+
+                  <div id="4room" style="display: none">
+                    <canvas id="col_bar4" width="500" height="400"></canvas>
+                  </div>
+
+                  <!-- <canvas id="col_bar" width="500" height="400"></canvas> -->
               </div>
 
-              <p class="side_p"> hey </p>
+              <div class="side_p">
+                  <button onclick="showgraph1()">1 Room</button>
+                  <button onclick="showgraph2()">2 Rooms</button>
+                  <br>
+                  <button onclick="showgraph3()">3 Rooms</button>
+                  <button onclick="showgraph4()">4+ Rooms</button>
+              </div>
+              <!-- <p class="side_p"> hey </p> -->
 
 
              <br>

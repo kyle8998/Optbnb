@@ -1,47 +1,230 @@
-var ctx = document.getElementById("col_bar").getContext('2d');
-var col_bar = new Chart(ctx, {
-    type: 'horizontalBar',
-    data: {
-        labels: ["Bayview","Bernal Heights" ,"Castro/Upper Market" ,"Chinatown" ,"Crocker Amazon" ,"Diamond Heights" ,"Downtown/Civic Center" ,"Excelsior" ,"Financial District" ,"Glen Park" ,"Golden Gate Park" ,"Haight Ashbury" ,"Inner Richmond" ,"Inner Sunset" ,"Lakeshore" ,"Marina" ,"Mission" ,"Nob Hill" ,"Noe Valley" ,"North Beach" ,"Ocean View" ,"Outer Mission" ,"Outer Richmond" ,"Outer Sunset" ,"Pacific Heights" ,"Parkside" ,"Potrero Hill" ,"Presidio" ,"Presidio Heights" ,"Russian Hill" ,"Seacliff" ,"South of Market" ,"Treasure Island/YBI" ,"Twin Peaks" ,"Visitacion Valley" ,"West of Twin Peaks" ,"Western Addition"],
-        // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-            label: 'Average Price in Dollars',
-            data: [95.05555555555556 ,132.4223107569721 ,169.18345323741008 ,198.76 ,85.9 ,144.15384615384616 ,216.4887459807074 ,85.29906542056075 ,209.19811320754718 ,143.8 ,121.25 ,144.16287878787878 ,135.46022727272728 ,146.5943396226415 ,119.1025641025641 ,199.3736842105263 ,146.7957142857143 ,180.14414414414415 ,173.55803571428572 ,176.27927927927928 ,114.51898734177215 ,122.68867924528301 ,133.91525423728814 ,111.8719512195122 ,191.01408450704224 ,199.01298701298703 ,243.8841463414634 ,160.0 ,174.8148148148148 ,211.22556390977442 ,146.33333333333334 ,258.22197802197803 ,93.42105263157895 ,145.04347826086956 ,112.6923076923077 ,118.56410256410257 ,165.98373983739836],
-            // data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)',
-                'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)',
-                'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
-                'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
-                'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
-                'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
-                'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)'
-
-            ],
-            borderColor: [
-                'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)',
-                'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)',
-                'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
-                'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
-                'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
-                'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
-                'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
+showgraph1();
+function showgraph1() {
+    var a = document.getElementById("1room");
+    var b = document.getElementById("2room");
+    var c = document.getElementById("3room");
+    var d = document.getElementById("4room");
+    if (a.style.display === "none") {
+        a.style.display = "block";
+        b.style.display = "none";
+        c.style.display = "none";
+        d.style.display = "none";
     }
-});
+    var ctx = document.getElementById("col_bar").getContext('2d');
+    var col_bar = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: ["Bayview","Bernal Heights" ,"Castro/Upper Market" ,"Chinatown" ,"Crocker Amazon" ,"Diamond Heights" ,"Downtown/Civic Center" ,"Excelsior" ,"Financial District" ,"Glen Park" ,"Golden Gate Park" ,"Haight Ashbury" ,"Inner Richmond" ,"Inner Sunset" ,"Lakeshore" ,"Marina" ,"Mission" ,"Nob Hill" ,"Noe Valley" ,"North Beach" ,"Ocean View" ,"Outer Mission" ,"Outer Richmond" ,"Outer Sunset" ,"Pacific Heights" ,"Parkside" ,"Potrero Hill" ,"Presidio" ,"Presidio Heights" ,"Russian Hill" ,"Seacliff" ,"South of Market" ,"Treasure Island/YBI" ,"Twin Peaks" ,"Visitacion Valley" ,"West of Twin Peaks" ,"Western Addition"],
+            // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: 'Average Price in Dollars',
+                data: [95.05555555555556 ,132.4223107569721 ,169.18345323741008 ,198.76 ,85.9 ,144.15384615384616 ,216.4887459807074 ,85.29906542056075 ,209.19811320754718 ,143.8 ,121.25 ,144.16287878787878 ,135.46022727272728 ,146.5943396226415 ,119.1025641025641 ,199.3736842105263 ,146.7957142857143 ,180.14414414414415 ,173.55803571428572 ,176.27927927927928 ,114.51898734177215 ,122.68867924528301 ,133.91525423728814 ,111.8719512195122 ,191.01408450704224 ,199.01298701298703 ,243.8841463414634 ,160.0 ,174.8148148148148 ,211.22556390977442 ,146.33333333333334 ,258.22197802197803 ,93.42105263157895 ,145.04347826086956 ,112.6923076923077 ,118.56410256410257 ,165.98373983739836],
+                // data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)'
+
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+
+}
+function showgraph2() {
+    var a = document.getElementById("2room");
+    var b = document.getElementById("1room");
+    var c = document.getElementById("3room");
+    var d = document.getElementById("4room");
+    if (a.style.display === "none") {
+        a.style.display = "block";
+        b.style.display = "none";
+        c.style.display = "none";
+        d.style.display = "none";
+    }
+    var ctx2 = document.getElementById("col_bar2").getContext('2d');
+    var col_bar2 = new Chart(ctx2, {
+        type: 'horizontalBar',
+        data: {
+            labels: ["Bayview","Bernal Heights" ,"Castro/Upper Market" ,"Chinatown" ,"Crocker Amazon" ,"Diamond Heights" ,"Downtown/Civic Center" ,"Excelsior" ,"Financial District" ,"Glen Park" ,"Golden Gate Park" ,"Haight Ashbury" ,"Inner Richmond" ,"Inner Sunset" ,"Lakeshore" ,"Marina" ,"Mission" ,"Nob Hill" ,"Noe Valley" ,"North Beach" ,"Ocean View" ,"Outer Mission" ,"Outer Richmond" ,"Outer Sunset" ,"Pacific Heights" ,"Parkside" ,"Potrero Hill" ,"Presidio" ,"Presidio Heights" ,"Russian Hill" ,"Seacliff" ,"South of Market" ,"Treasure Island/YBI" ,"Twin Peaks" ,"Visitacion Valley" ,"West of Twin Peaks" ,"Western Addition"],
+            // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: 'Average Price in Dollars',
+                data: [187,242.9263158,308.049505,276.6666667,137.3333333,284,395.0294118,174.375,532.5238095,241.75,171.5,318.4545455,315.4285714,323.3703704,313.3333333,430.5490196,280.4382022,324.2972973,330.075,621.375,194.2631579,304.3571429,208.7222222,209.5490196,429.7358491,247.52,398.4098361,,356,460.6326531,243,592.1473684,,293.8421053,225.25,217,340.8085106],
+                // data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)',
+                    'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)'
+
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+}
+function showgraph3() {
+    var a = document.getElementById("3room");
+    var b = document.getElementById("1room");
+    var c = document.getElementById("2room");
+    var d = document.getElementById("4room");
+    if (a.style.display === "none") {
+        a.style.display = "block";
+        b.style.display = "none";
+        c.style.display = "none";
+        d.style.display = "none";
+    }
+    var ctx3 = document.getElementById("col_bar3").getContext('2d');
+    var col_bar3 = new Chart(ctx3, {
+        type: 'horizontalBar',
+        data: {
+            labels: ["Bayview","Bernal Heights" ,"Castro/Upper Market" ,"Chinatown" ,"Crocker Amazon" ,"Diamond Heights" ,"Downtown/Civic Center" ,"Excelsior" ,"Financial District" ,"Glen Park" ,"Golden Gate Park" ,"Haight Ashbury" ,"Inner Richmond" ,"Inner Sunset" ,"Lakeshore" ,"Marina" ,"Mission" ,"Nob Hill" ,"Noe Valley" ,"North Beach" ,"Ocean View" ,"Outer Mission" ,"Outer Richmond" ,"Outer Sunset" ,"Pacific Heights" ,"Parkside" ,"Potrero Hill" ,"Presidio" ,"Presidio Heights" ,"Russian Hill" ,"Seacliff" ,"South of Market" ,"Treasure Island/YBI" ,"Twin Peaks" ,"Visitacion Valley" ,"West of Twin Peaks" ,"Western Addition"],
+            // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: 'Average Price in Dollars',
+                data: [344.6666667,326.45,447.4150943,10000,315,310,630,442.6363636,1240,430.5,,494.5806452,405.4,370.6,463.3333333,789.6818182,493.0864198,696.2631579,485.25,628.8181818,269.75,362,294.3636364,396.1176471,715.0769231,387.25,529.9354839,699,667.5,1069,386.6666667,1231.428571,,398.3333333,235,462.8888889,447.1111111],
+                // data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(0, 0, 0, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)'
+
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(0, 0, 0, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+}
+function showgraph4() {
+    var a = document.getElementById("4room");
+    var b = document.getElementById("1room");
+    var c = document.getElementById("2room");
+    var d = document.getElementById("3room");
+    if (a.style.display === "none") {
+        a.style.display = "block";
+        b.style.display = "none";
+        c.style.display = "none";
+        d.style.display = "none";
+    }
+    var ctx4 = document.getElementById("col_bar4").getContext('2d');
+    var col_bar4 = new Chart(ctx4, {
+        type: 'horizontalBar',
+        data: {
+            labels: ["Bayview","Bernal Heights" ,"Castro/Upper Market" ,"Chinatown" ,"Crocker Amazon" ,"Diamond Heights" ,"Downtown/Civic Center" ,"Excelsior" ,"Financial District" ,"Glen Park" ,"Golden Gate Park" ,"Haight Ashbury" ,"Inner Richmond" ,"Inner Sunset" ,"Lakeshore" ,"Marina" ,"Mission" ,"Nob Hill" ,"Noe Valley" ,"North Beach" ,"Ocean View" ,"Outer Mission" ,"Outer Richmond" ,"Outer Sunset" ,"Pacific Heights" ,"Parkside" ,"Potrero Hill" ,"Presidio" ,"Presidio Heights" ,"Russian Hill" ,"Seacliff" ,"South of Market" ,"Treasure Island/YBI" ,"Twin Peaks" ,"Visitacion Valley" ,"West of Twin Peaks" ,"Western Addition"],
+            // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: 'Average Price in Dollars',
+                data: [400,496.2777778,694.2352941,1500,300,295,84,444.375,,445.5,889,783.05,586.0434783,1283.333333,298,1081.307692,715.05,959.8333333,790.5294118,925,488.5,252.4,943.2222222,527.5,1522,474.5,951.25,800,3060,1544.666667,,,,711.25,260,560.8333333,1484.758621],
+                // data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)',
+                    'rgba(75, 192, 192, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(0, 0, 0, 0.2)', 'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)'
+
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)',
+                    'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192), 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(0, 0, 0, 1)', 'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+}
+
 
 
 
@@ -84,54 +267,10 @@ var scatter_chart = new Chart(scatter, {
 
 function makeLabels() {
   let arr = [
+
     1,
-    2,
-    8.383664554147352,
-    6.512236758312074,
-    5.977927375174986,
-    5.795411971799503,
-    7.483008448660743,
-    10.944857778345781,
-    9.731148601839132,
-    9.299830925080316,
-    5.829437054802131,
-    5.89389536362796,
-    8.003445135489207,
-    6.0428956435913745,
-    6.0170861155256885,
-    8.8858198627947,
-    8.063495958147668,
-    8.241177297897147,
-    9.515870969001629,
-    10.22551286060783,
-    10.292722396729182,
-    8.251753293888944,
-    7.146226463060593,
-    5.988918648803384,
-    6.496517457556567,
-    7.432891288115246,
-    9.344935207444069,
-    5.843592666018152,
-    6.12315092706915,
-    8.687749798119956,
-    8.291409485783507,
-    7.863325849087245,
-    10.53809438360669,
-    6.702738926037372,
-    6.784877019135593,
-    8.490500493936208,
-    9.658488190644242,
-    9.343801630924382,
-    11.52492623170561,
-    10.00207659039105,
-    8.57312564934666,
-    6.846018047888539,
-    9.162893182611098,
-    5.9869519001247955,
-    5.576952345873481,
-    8.595164584671123,
-    7.431108145074283,
-    9.85430793938902
+
+    100
   ];
 
   arr = arr.sort((a, b) => a - b);
