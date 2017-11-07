@@ -5,11 +5,11 @@ Web application to visualize trends on Airbnb listings and optimize your own lis
 
 ### Technologies Used
 
-Python with Pandas, NumPy, and Jupyter Notebook
+Computations: Python with Pandas, NumPy, and Jupyter Notebook
 
-Charts.js
+CSS: Bootstrap 4, Bulma
 
-Google Maps API
+Visualization: Chart.js, Google Maps API
 
 ### How to run locally
 

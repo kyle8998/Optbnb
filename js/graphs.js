@@ -1,3 +1,10 @@
+
+var graph1 = {};
+var graph2 = {};
+var graph3 = {};
+var graph4 = {};
+
+
 showgraph1();
 function showgraph1() {
     var a = document.getElementById("1room");
@@ -9,7 +16,9 @@ function showgraph1() {
         b.style.display = "none";
         c.style.display = "none";
         d.style.display = "none";
-    }
+
+    // graph1.destroy()
+
     var ctx = document.getElementById("col_bar").getContext('2d');
     var col_bar = new Chart(ctx, {
         type: 'horizontalBar',
@@ -55,6 +64,8 @@ function showgraph1() {
         }
     });
 
+  }
+
 }
 function showgraph2() {
     var a = document.getElementById("2room");
@@ -66,7 +77,7 @@ function showgraph2() {
         b.style.display = "none";
         c.style.display = "none";
         d.style.display = "none";
-    }
+
     var ctx2 = document.getElementById("col_bar2").getContext('2d');
     var col_bar2 = new Chart(ctx2, {
         type: 'horizontalBar',
@@ -111,6 +122,9 @@ function showgraph2() {
             }
         }
     });
+
+  }
+
 }
 function showgraph3() {
     var a = document.getElementById("3room");
@@ -122,7 +136,7 @@ function showgraph3() {
         b.style.display = "none";
         c.style.display = "none";
         d.style.display = "none";
-    }
+
     var ctx3 = document.getElementById("col_bar3").getContext('2d');
     var col_bar3 = new Chart(ctx3, {
         type: 'horizontalBar',
@@ -167,6 +181,9 @@ function showgraph3() {
             }
         }
     });
+
+  }
+
 }
 function showgraph4() {
     var a = document.getElementById("4room");
@@ -178,7 +195,7 @@ function showgraph4() {
         b.style.display = "none";
         c.style.display = "none";
         d.style.display = "none";
-    }
+
     var ctx4 = document.getElementById("col_bar4").getContext('2d');
     var col_bar4 = new Chart(ctx4, {
         type: 'horizontalBar',
@@ -223,6 +240,9 @@ function showgraph4() {
             }
         }
     });
+
+  }
+
 }
 
 
