@@ -168,7 +168,7 @@
 <div class="tile is-ancestor">
   <div class="tile is-vertical is-8">
     <div class="tile is-parent">
-      <article class="tile is-child notification is-white">
+      <article class="tile is-child notification">
         <!-- <p class="title">Wide column</p>
         <p class="subtitle">Aligned with the right column</p> -->
         <div class="content">
@@ -184,7 +184,7 @@
             <div class="col-lg-8 fixed_graph">
             <!-- First CoL bar graph -->
                 <div id="1room" style="display: none">
-                  <canvas id="col_bar" width="120" height="100"></canvas>
+                  <canvas id="col_bar" width="120" height="110"></canvas>
                 </div>
 
                 <div id="2room" style="display: none">
@@ -207,16 +207,18 @@
   </div>
 
     <div class="tile is-parent">
-      <article class="tile is-child notification is-white">
+      <article class="tile is-child notification">
         <div class="content">
-          <hr style="height:75pt; visibility:hidden;" />
+          <hr style="height:60pt; visibility:hidden;" />
           <!-- <p class="title">How much does a AirBnb cost in my neighbourhood?</p> -->
+          <div class="testing">
           <p class="subtitle is-4">How much does a AirBnb cost in my neighbourhood?</p>
           <div class="content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
             <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-            <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
+            <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet.</p>
           </div>
+      </div>
         </div>
       </article>
     </div>
@@ -224,60 +226,34 @@
 
 </section>
 
-    <section id="trendss">
-      <div class="container">
+    <section id="trend2" style="background-color: rgb(242, 241, 239)">
+
+        <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child notification">
+            <p class="title">What does this data mean?</p>
+            <p class="subtitle">With some content</p>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+            </div>
+          </article>
+        </div>
+        <div class="tile is-parent is-7">
+          <article class="tile is-child notification">
+            <p style="color:gray" class="title">Regression Analysis</p>
+            <p class="subtitle">With some content</p>
+            <div class="content">
+                <canvas id="scatter" width="300" height="200"></canvas>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!-- <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
 
-              <!-- First CoL bar graph -->
-              <div class="graph_area left_graph">
-                  <!-- <h1>Trends</h1>
-                  <h2 style="color:gray">Average Cost of Living in Each Neighbourhood</h2>
-                  <hr style="height:20pt; visibility:hidden;" />
 
-                  <div id="1room">
-                    <canvas id="col_bar" width="500" height="400"></canvas>
-                  </div>
 
-                  <div id="2room" style="display: none">
-                    <canvas id="col_bar2" width="500" height="400"></canvas>
-                  </div>
-
-                  <div id="3room" style="display: none">
-                    <canvas id="col_bar3" width="500" height="400"></canvas>
-                  </div>
-
-                  <div id="4room" style="display: none">
-                    <canvas id="col_bar4" width="500" height="400"></canvas>
-                  </div> -->
-
-                  <!-- <canvas id="col_bar" width="500" height="400"></canvas> -->
-              </div>
-
-              <!-- 4 Buttons for the graph -->
-              <!-- <div class="side_buttons">
-                  <button type="button" class="btn btn-info" onclick="showgraph1()">1 Room</button>
-                  <button type="button" class="btn btn-info" onclick="showgraph2()">2 Rooms</button>
-                  <button type="button" class="btn btn-info" onclick="showgraph3()">3 Rooms</button>
-                  <button type="button" class="btn btn-info" onclick="showgraph4()">4+ Rooms</button>
-              </div> -->
-
-              <!-- <article class="tile is-child notification" style="background-color: rgb(242, 241, 239);"><div class="content"><p class="title"><strong>About FiveThree</strong></p> <p class="subtitle"></p> <div class="content">
-					description
-					<br><br>
-					febgegfgegrwf
-					<br><br>
-					awggergrger
-                </div></div></article> -->
-
-              <!-- <div class="tile">
-                  <hr style="height:20pt; visibility:hidden;" />
-                  escription
-                  <br><br>
-                  febgegfgegrwf
-                  <br><br>
-                  awggergrger
-              </div> -->
 
 
              <br>
@@ -286,16 +262,91 @@
                   <canvas id="scatter" width="300" height="300"></canvas>
               </div>
 
-<br>
+<br> -->
 
+              <!-- <div class="graph_area left_graph">
+                  <canvas id="line-chart" width="800" height="450"></canvas>
+              </div> -->
+            <!-- <h2>Services we offer</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p> -->
+          <!-- </div>
+        </div>
+      </div> -->
+    </section>
+
+    <section id="trend3">
+      <!-- <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
               <div class="graph_area left_graph">
                   <canvas id="line-chart" width="800" height="450"></canvas>
               </div>
-            <!-- <h2>Services we offer</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p> -->
+            </div>
+        </div>
+      </div> -->
+
+
+
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile is-parent">
+            <article class="tile is-child notification">
+              <!-- <p class="title">Wide column</p>
+              <p class="subtitle">Aligned with the right column</p> -->
+              <div class="content">
+
+                  <!-- <h1>Trends</h1> -->
+                  <h2 style="color:gray">Bed to Bathroom Ratio</h2>
+                  <!-- <button type="button" class="btn btn-info" onclick="showgraph1()">1 Room</button>
+                  <button type="button" class="btn btn-info" onclick="showgraph2()">2 Rooms</button>
+                  <button type="button" class="btn btn-info" onclick="showgraph3()">3 Rooms</button>
+                  <button type="button" class="btn btn-info" onclick="showgraph4()">4+ Rooms</button> -->
+                  <!-- <hr style="height:2pt; visibility:hidden;" /> -->
+
+                  <!-- <div class="col-lg-8 fixed_graph"> -->
+                  <!-- First CoL bar graph -->
+                      <!-- <div id="1room" style="display: none">
+                        <canvas id="col_bar" width="120" height="110"></canvas>
+                      </div>
+
+                      <div id="2room" style="display: none">
+                        <canvas id="col_bar2" width="120" height="100"></canvas>
+                      </div>
+
+                      <div id="3room" style="display: none">
+                        <canvas id="col_bar3" width="120" height="100"></canvas>
+                      </div>
+
+                      <div id="4room" style="display: none">
+                        <canvas id="col_bar4" width="120" height="100"></canvas>
+                      </div>
+
+                  </div> -->
+                  <canvas id="line-chart" width="800" height="450"></canvas>
+
+              </div>
+            </article>
           </div>
         </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification">
+              <div class="content">
+                <hr style="height:60pt; visibility:hidden;" />
+                <!-- <p class="title">How much does a AirBnb cost in my neighbourhood?</p> -->
+                <div class="testing">
+                <p class="subtitle is-4">How much does a AirBnb cost in my neighbourhood?</p>
+                <div class="content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+                  <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
+                  <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet.</p>
+                </div>
+            </div>
+              </div>
+            </article>
+          </div>
       </div>
+
     </section>
 
 
