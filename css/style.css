@@ -8,7 +8,7 @@
      max-width: 100%;
      overflow-x: hidden;
  }
- 
+
  .bg-primary {
    background-color: #FF5A60 !important;
  }
@@ -46,7 +46,7 @@
     padding: 0px;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 650px) {
 
     .left_graph {
         position: relative;
@@ -82,6 +82,10 @@ padding: .75rem;
         width: 60em;
     }
 
+    .media-stretch {
+        width: 650px;
+    }
+
 }
 
 .max_graph {
@@ -95,4 +99,11 @@ padding: .75rem;
 
 .trend_head {
 
+}
+
+.force-left {
+    position: absolute;
+    right: 15em;
+    top: 20em;
+    margin-left: 50px;
 }

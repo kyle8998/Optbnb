@@ -4,14 +4,23 @@ var graph2 = null;
 var graph3 = null;
 var graph4 = null;
 
-Papa.parse("neighbourhoods.csv", {
+var neighbourhoods = [];
+// Parse Neighbourhoods
+Papa.parse("/data/neighbourhoods.csv", {
 	download: true,
 	complete: function(results) {
-		console.log(results);
+        var size = results.data.length;
+        var i;
+        for (i = 1; i < size - 1; i++) {
+            neighbourhoods.push(results.data[i][1]);
+        }
+        // Display first graph after neighbours array is created
+        showgraph1();
+		console.log(neighbourhoods);
 	}
 });
 
-showgraph1();
+// showgraph1();
 
 function showgraph1() {
     if (graph2 != null) graph2.destroy();
@@ -31,7 +40,7 @@ function showgraph1() {
     graph1 = new Chart(ctx, {
         type: 'horizontalBar',
         data: {
-            labels: ["Bayview","Bernal Heights" ,"Castro/Upper Market" ,"Chinatown" ,"Crocker Amazon" ,"Diamond Heights" ,"Downtown/Civic Center" ,"Excelsior" ,"Financial District" ,"Glen Park" ,"Golden Gate Park" ,"Haight Ashbury" ,"Inner Richmond" ,"Inner Sunset" ,"Lakeshore" ,"Marina" ,"Mission" ,"Nob Hill" ,"Noe Valley" ,"North Beach" ,"Ocean View" ,"Outer Mission" ,"Outer Richmond" ,"Outer Sunset" ,"Pacific Heights" ,"Parkside" ,"Potrero Hill" ,"Presidio" ,"Presidio Heights" ,"Russian Hill" ,"Seacliff" ,"South of Market" ,"Treasure Island/YBI" ,"Twin Peaks" ,"Visitacion Valley" ,"West of Twin Peaks" ,"Western Addition"],
+            labels: neighbourhoods,
             // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
             datasets: [{
                 label: 'Average Price in Dollars',

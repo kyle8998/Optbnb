@@ -229,7 +229,7 @@
     <section id="trend2" style="background-color: rgb(242, 241, 239)">
 
         <div class="tile is-ancestor">
-        <div class="tile is-parent">
+        <div style="padding-left: 1em" class="tile is-parent">
           <article class="tile is-child notification">
             <p class="title">What does this data mean?</p>
             <p class="subtitle">With some content</p>
@@ -240,13 +240,13 @@
         </div>
 
         <!-- Graph -->
-        <div class="tile is-parent is-7">
+        <div style="width: 40em" class="media-stretch tile is-parent is-7">
           <article class="tile is-child notification">
-            <p style="color:gray" class="title">Regression Analysis</p>
+            <p style="color:gray" class="title">In-depth Rating Analysis</p>
             <!-- <p class="subtitle">With some content</p> -->
             <div class="content">
-                <canvas id="radar_chart" style="max-width:400px; max-height:400px" width="100" height="100"></canvas>
-
+                <canvas id="radar_chart" style="max-width:500px; max-height:500px" width="100" height="100"></canvas>
+                <h5 class="center">Overall Rating</h5>
                 <!-- <canvas id="scatter" width="300" height="200"></canvas> -->
             </div>
           </article>
