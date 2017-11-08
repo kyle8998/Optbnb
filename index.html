@@ -184,7 +184,7 @@
             <div class="col-lg-8 fixed_graph">
             <!-- First CoL bar graph -->
                 <div id="1room" style="display: none">
-                  <canvas id="col_bar" width="120" height="110"></canvas>
+                  <canvas id="col_bar" width="120" height="100"></canvas>
                 </div>
 
                 <div id="2room" style="display: none">
@@ -238,12 +238,16 @@
             </div>
           </article>
         </div>
+
+        <!-- Graph -->
         <div class="tile is-parent is-7">
           <article class="tile is-child notification">
             <p style="color:gray" class="title">Regression Analysis</p>
-            <p class="subtitle">With some content</p>
+            <!-- <p class="subtitle">With some content</p> -->
             <div class="content">
-                <canvas id="scatter" width="300" height="200"></canvas>
+                <canvas id="radar_chart" style="max-width:400px; max-height:400px" width="100" height="100"></canvas>
+
+                <!-- <canvas id="scatter" width="300" height="200"></canvas> -->
             </div>
           </article>
         </div>
@@ -328,7 +332,8 @@
             </article>
           </div>
         </div>
-
+        <!-- <canvas id="radar_chart" style="max-width:400px; max-height:400px" width="100" height="100"></canvas> -->
+<!-- <canvas id="radar_chart" width="100" height="100"></canvas> -->
           <div class="tile is-parent">
             <article class="tile is-child notification">
               <div class="content">
@@ -389,6 +394,7 @@
 
 </html>
 
+<script src="js/papaparse.min.js"></script>
 <script src="js/graphs.js"></script>
 <script src="js/gmaps.js"></script>
 <script async defer

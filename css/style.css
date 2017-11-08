@@ -4,6 +4,11 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
  */
 
+ html, body {
+     max-width: 100%;
+     overflow-x: hidden;
+ }
+ 
  .bg-primary {
    background-color: #FF5A60 !important;
  }
