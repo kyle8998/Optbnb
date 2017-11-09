@@ -3,6 +3,7 @@ var graph1 = null;
 var graph2 = null;
 var graph3 = null;
 var graph4 = null;
+var radarChart = null;
 
 var neighbourhoods = [];
 // Parse Neighbourhoods
@@ -20,7 +21,217 @@ Papa.parse("/data/neighbourhoods.csv", {
 	}
 });
 
-// showgraph1();
+var radar_neighbourhood;
+showradar1();
+
+// To anyone reading.. I could've definitely done this more efficiently.
+// I just hate myself.
+function showradar1() {
+    radar_neighbourhood = 1;
+    document.getElementById("dropdownMenuButton").innerHTML = "Bayview";
+    radar_parse();
+}
+function showradar2() {
+    radar_neighbourhood = 2;
+    document.getElementById("dropdownMenuButton").innerHTML = "Bernal Heights";
+    radar_parse();
+}
+function showradar3() {
+    radar_neighbourhood = 3;
+    document.getElementById("dropdownMenuButton").innerHTML = "Castro/Upper Market";
+    radar_parse();
+}
+function showradar4() {
+    radar_neighbourhood = 4;
+    document.getElementById("dropdownMenuButton").innerHTML = "Chinatown";
+    radar_parse();
+}
+function showradar5() {
+    radar_neighbourhood = 5;
+    document.getElementById("dropdownMenuButton").innerHTML = "Crocker Amazon";
+    radar_parse();
+}
+function showradar6() {
+    radar_neighbourhood = 6;
+    document.getElementById("dropdownMenuButton").innerHTML = "Diamond Heights";
+    radar_parse();
+}
+function showradar7() {
+    radar_neighbourhood = 7;
+    document.getElementById("dropdownMenuButton").innerHTML = "Downtown/Civic Center";
+    radar_parse();
+}
+function showradar8() {
+    radar_neighbourhood = 8;
+    document.getElementById("dropdownMenuButton").innerHTML = "Excelsior";
+    radar_parse();
+}
+function showradar9() {
+    radar_neighbourhood = 9;
+    document.getElementById("dropdownMenuButton").innerHTML = "Financial District";
+    radar_parse();
+}
+function showradar10() {
+    radar_neighbourhood = 10;
+    document.getElementById("dropdownMenuButton").innerHTML = "Glen Park";
+    radar_parse();
+}
+function showradar11() {
+    radar_neighbourhood = 11;
+    document.getElementById("dropdownMenuButton").innerHTML = "Golden Gate Park";
+    radar_parse();
+}
+function showradar12() {
+    radar_neighbourhood = 12;
+    document.getElementById("dropdownMenuButton").innerHTML = "Haight Ashbury";
+    radar_parse();
+}
+function showradar13() {
+    radar_neighbourhood = 13;
+    document.getElementById("dropdownMenuButton").innerHTML = "Inner Richmond";
+    radar_parse();
+}
+function showradar14() {
+    radar_neighbourhood = 14;
+    document.getElementById("dropdownMenuButton").innerHTML = "Inner Sunset";
+    radar_parse();
+}
+function showradar15() {
+    radar_neighbourhood = 15;
+    document.getElementById("dropdownMenuButton").innerHTML = "Lakeshore";
+    radar_parse();
+}
+function showradar16() {
+    radar_neighbourhood = 16;
+    document.getElementById("dropdownMenuButton").innerHTML = "Marina";
+    radar_parse();
+}
+function showradar17() {
+    radar_neighbourhood = 17;
+    document.getElementById("dropdownMenuButton").innerHTML = "Mission";
+    radar_parse();
+}
+function showradar18() {
+    radar_neighbourhood = 18;
+    document.getElementById("dropdownMenuButton").innerHTML = "Nob Hill";
+    radar_parse();
+}
+function showradar19() {
+    radar_neighbourhood = 19;
+    document.getElementById("dropdownMenuButton").innerHTML = "Noe Valley";
+    radar_parse();
+}
+function showradar20() {
+    radar_neighbourhood = 20;
+    document.getElementById("dropdownMenuButton").innerHTML = "North Beach";
+    radar_parse();
+}
+function showradar21() {
+    radar_neighbourhood = 21;
+    document.getElementById("dropdownMenuButton").innerHTML = "Ocean View";
+    radar_parse();
+}
+function showradar22() {
+    radar_neighbourhood = 22;
+    document.getElementById("dropdownMenuButton").innerHTML = "Outer Mission";
+    radar_parse();
+}
+function showradar23() {
+    radar_neighbourhood = 23;
+    document.getElementById("dropdownMenuButton").innerHTML = "Outer Richmond";
+    radar_parse();
+}
+function showradar24() {
+    radar_neighbourhood = 24;
+    document.getElementById("dropdownMenuButton").innerHTML = "Outer Sunset";
+    radar_parse();
+}
+function showradar25() {
+    radar_neighbourhood = 25;
+    document.getElementById("dropdownMenuButton").innerHTML = "Pacific Heights";
+    radar_parse();
+}
+function showradar26() {
+    radar_neighbourhood = 26;
+    document.getElementById("dropdownMenuButton").innerHTML = "Parkside";
+    radar_parse();
+}
+function showradar27() {
+    radar_neighbourhood = 27;
+    document.getElementById("dropdownMenuButton").innerHTML = "Potrero Hill";
+    radar_parse();
+}
+function showradar28() {
+    radar_neighbourhood = 28;
+    document.getElementById("dropdownMenuButton").innerHTML = "Presidio";
+    radar_parse();
+}
+function showradar29() {
+    radar_neighbourhood = 29;
+    document.getElementById("dropdownMenuButton").innerHTML = "Presidio Heights";
+    radar_parse();
+}
+function showradar30() {
+    radar_neighbourhood = 30;
+    document.getElementById("dropdownMenuButton").innerHTML = "Russian Hill";
+    radar_parse();
+}
+function showradar31() {
+    radar_neighbourhood = 31;
+    document.getElementById("dropdownMenuButton").innerHTML = "Seacliff";
+    radar_parse();
+}
+function showradar32() {
+    radar_neighbourhood = 32;
+    document.getElementById("dropdownMenuButton").innerHTML = "South of Market";
+    radar_parse();
+}
+function showradar33() {
+    radar_neighbourhood = 33;
+    document.getElementById("dropdownMenuButton").innerHTML = "Treasure Island/YBI";
+    radar_parse();
+}
+function showradar34() {
+    radar_neighbourhood = 34;
+    document.getElementById("dropdownMenuButton").innerHTML = "Twin Peaks";
+    radar_parse();
+}
+function showradar35() {
+    radar_neighbourhood = 35;
+    document.getElementById("dropdownMenuButton").innerHTML = "Visitacion Valley";
+    radar_parse();
+}
+function showradar36() {
+    radar_neighbourhood = 36;
+    document.getElementById("dropdownMenuButton").innerHTML = "West of Twin Peaks";
+    radar_parse();
+}
+function showradar37() {
+    radar_neighbourhood = 37;
+    document.getElementById("dropdownMenuButton").innerHTML = "Western Addition";
+    radar_parse();
+}
+
+// Parse the rating data to use
+var parsed_radar = [];
+function radar_parse() {
+    parsed_radar = [];
+    Papa.parse("/data/rating_data.csv", {
+    	download: true,
+    	complete: function(results) {
+            // Destroy existing charts
+            if (radarChart != null) radarChart.destroy();
+            var i;
+            for (i = 2; i < 8; i++) {
+                parsed_radar.push(results.data[radar_neighbourhood][i]);
+            }
+            graphradar();
+    		console.log(parsed_radar);
+    	}
+    });
+}
+
+
 
 function showgraph1() {
     if (graph2 != null) graph2.destroy();
@@ -427,21 +638,35 @@ new Chart(document.getElementById("line-chart"), {
   }
 });
 
-
-
-// Radar graph
-var radarCanvas = document.getElementById("radar_chart");
-
-var radarData = {
-  labels: ["Accuracy", "Cleanliness", "Check-in", "Communication", "Location", "Value"],
-  datasets: [{
-    label: "Bayview",
-    backgroundColor: "rgba(54, 162, 235,0.2)",
-    data: [9.425531915,9.29787234,9.755319149,9.712765957,8.159574468,9.14893617]
-}]
+var radar_options = {
+    // responsive: false,
+    maintainAspectRatio: true,
+    scale: {
+        ticks: {
+            beginAtZero: false,
+            max: 10,
+            min: 8
+        }
+    }
 };
 
-var radarChart = new Chart(radarCanvas, {
-  type: 'radar',
-  data: radarData
-});
+function graphradar() {
+    // Radar graph
+    var radarCanvas = document.getElementById("radar_chart");
+
+    var radarData = {
+      labels: ["Accuracy", "Cleanliness", "Check-in", "Communication", "Location", "Value"],
+      datasets: [{
+        label: "Rating",
+        backgroundColor: "rgba(54, 162, 235,0.2)",
+        data: parsed_radar
+    }]
+    };
+
+    radarChart = new Chart(radarCanvas, {
+      type: 'radar',
+      data: radarData,
+      options: radar_options
+    });
+
+}
