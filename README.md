@@ -25,3 +25,7 @@ node server
 ```
 
 Access the page by going to localhost:3000
+
+### General Overview
+
+All computations were done before any visualization using Pandas and NumPy in Jupyter Notebook. [View Computations Here](data/Import_Data.ipynb)

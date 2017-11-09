@@ -22,6 +22,7 @@ Papa.parse("/data/neighbourhoods.csv", {
 });
 
 var radar_neighbourhood;
+var overall;
 showradar1();
 
 // To anyone reading.. I could've definitely done this more efficiently.
@@ -225,7 +226,9 @@ function radar_parse() {
             for (i = 2; i < 8; i++) {
                 parsed_radar.push(results.data[radar_neighbourhood][i]);
             }
+            overall = results.data[radar_neighbourhood][i];
             graphradar();
+            document.getElementById("overallscore").innerHTML = "Overall Score: " + overall;
     		console.log(parsed_radar);
     	}
     });
