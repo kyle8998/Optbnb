@@ -45,6 +45,18 @@ function initMap() {
     center: sf
   });
 
+  // marker = new google.maps.Marker({
+  //         map: map,
+  //         animation: google.maps.Animation.DROP,
+  //         position: sf
+  //       });
+  // var location = {lat: 37.7541839478958, lng: -122.406513787399};
+  // marker = new google.maps.Marker({
+  //         map: map,
+  //         animation: google.maps.Animation.DROP,
+  //         position: location
+  //       });
+
   // Create the DIV to hold the control and call the CenterControl()
   // constructor passing in this DIV.
   var centerControlDiv = document.createElement('div');
@@ -52,6 +64,16 @@ function initMap() {
 
   centerControlDiv.index = 1;
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+
+  map.setZoom(12);
+}
+
+function createMarker(lat, lng) {
+    marker = new google.maps.Marker({
+        map: map,
+        animation: google.maps.Animation.DROP,
+        position: {lat, lng}
+    });
 }
 
 

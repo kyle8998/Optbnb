@@ -12,7 +12,7 @@ Capital One Summit for Software Engineers Submission created by Kyle Lim.
 
 **Computations:** Python with Pandas, NumPy, and Jupyter Notebook
 
-**Front End:** Bootstrap 4, Bulma, jQuery
+**Front End:** Bootstrap 4, Bulma, jQuery, Gulp.js
 
 **Visualization:** Chart.js, Google Maps API, Papa Parse
 

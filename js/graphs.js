@@ -28,6 +28,8 @@ var opt_lat = null;
 var avg_price;
 var lower;
 var upper;
+var location;
+var marker;
 function optimize() {
 	var a = document.getElementById("select_neighbourhood");
 	opt_neighbourhood = a.options[a.selectedIndex].value;
@@ -63,8 +65,20 @@ function optimize() {
 				// document.getElementById("loader").style.display = "block";
 				//document.getElementById("loader").style.display = "none";
 
+				opt_long = -122.406513787399;
+				opt_lat = 37.7541839478958;
 				document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
+				map.setZoom(17);
+				map.setCenter(new google.maps.LatLng( opt_lat, opt_long ) );
+				// location = {lat: 37.7541839478958, long: -122.406513787399};
+				// marker = new google.maps.Marker({
+			    //         map: map,
+			    //         animation: google.maps.Animation.DROP,
+			    //         position: location
+			    //       });
+				createMarker(opt_lat, opt_long);
 
+				// map.panTo(curmarker.position);
 				console.log(lower);
 	    	}
 	    });
