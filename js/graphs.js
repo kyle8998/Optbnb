@@ -30,21 +30,36 @@ var lower;
 var upper;
 var location;
 var marker;
+var neighbourhood_lat = [0, 37.7304, 37.7412, 37.7609, 37.7941, 37.7120, 37.7424, 37.7816, 37.7244, 37.7946, 37.7378, 37.7694, 37.7692, 37.7799, 37.7607, 37.7233, 37.8037, 37.7599, 37.7930, 37.7502, 37.8061, 37.7142, 37.7157, 37.7777, 37.7467, 37.7925, 37.7330, 37.7605, 37.7989, 37.7925, 37.8011, 37.7859, 37.7785, 37.8236, 37.7525, 37.7172, 37.7425, 37.782472];
+var neighbourhood_long = [0, -122.3844, -122.4178, -122.4350, -122.4078, -122.4376, -122.4425, -122.4156, -122.4272, -122.3999, -122.4321, -122.4862, -122.4481, -122.4647, -122.4680, -122.4887, -122.4368, -122.4148, -122.4161, -122.4337, -122.4103, -122.4566, -122.4458, -122.4953, -122.4863, -122.4382, -122.4786, -122.4009, -122.4662, -122.4382, -122.4196, -122.4907, -122.4056, -122.3706, -122.4476, -122.4043, -122.4576, -122.428315];
+
 function optimize() {
 	var a = document.getElementById("select_neighbourhood");
 	opt_neighbourhood = a.options[a.selectedIndex].value;
 	var b = document.getElementById("select_room");
 	opt_room = b.options[b.selectedIndex].value;
-	opt_long = document.getElementById("inputLongitude").value;
-	opt_lat = document.getElementById("inputLatitude").value;
+	opt_lat = parseFloat(document.getElementById("inputLatitude").value);
+	opt_long = parseFloat(document.getElementById("inputLongitude").value);
 	console.log(opt_neighbourhood);
 	console.log(opt_room);
 	console.log(opt_long);
 	console.log(opt_lat);
 	document.getElementById("missinginfo").innerHTML = "";
 
-	if (opt_neighbourhood == "Neighbourhood") {
-		document.getElementById("missinginfo").innerHTML = "You must input a neighbourhood.";
+	if (opt_neighbourhood == "Neighbourhood" && (isNaN(opt_lat) && isNaN(opt_long))) {
+		document.getElementById("missinginfo").innerHTML = "You must input a neighbourhood or geo-coordinates";
+		return;
+	}
+	// if (opt_neighbourhood == "Neighbourhood") {
+	// 	document.getElementById("missinginfo").innerHTML = "You must input a neighbourhood.";
+	// 	return;
+	// }
+	else if (isNaN(opt_lat) && !isNaN(opt_long)) {
+		document.getElementById("missinginfo").innerHTML = "You must enter a latitude with your longitude.";
+		return;
+	}
+	else if (!isNaN(opt_lat) && isNaN(opt_long)) {
+		document.getElementById("missinginfo").innerHTML = "You must enter a longitude with your latitude.";
 		return;
 	}
 	else if (opt_room == "Rooms Available") {
@@ -52,9 +67,14 @@ function optimize() {
 		return;
 	}
 
+	// If the long/lat is not entered
+	else if (opt_neighbourhood != "Neighbourhood" && (isNaN(opt_lat) || isNaN(opt_long))) {
 	    Papa.parse("/data/regression_data.csv", {
 	    	download: true,
 	    	complete: function(results) {
+				// Set default geocoordinates for the neighbourhood
+				opt_lat = neighbourhood_lat[opt_neighbourhood];
+				opt_long = neighbourhood_long[opt_neighbourhood];
 
 				// Calculate upper and lower bounds
 				avg_price = results.data[opt_neighbourhood][opt_room];
@@ -65,10 +85,8 @@ function optimize() {
 				// document.getElementById("loader").style.display = "block";
 				//document.getElementById("loader").style.display = "none";
 
-				opt_long = -122.406513787399;
-				opt_lat = 37.7541839478958;
 				document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
-				map.setZoom(17);
+				map.setZoom(15);
 				map.setCenter(new google.maps.LatLng( opt_lat, opt_long ) );
 				// location = {lat: 37.7541839478958, long: -122.406513787399};
 				// marker = new google.maps.Marker({
@@ -82,10 +100,14 @@ function optimize() {
 				console.log(lower);
 	    	}
 	    });
+	}
 
-	// If long or lat not entered optimize based on neighbourhood
-	if (opt_long != "" || opt_lat != "") {
-
+	// If long and lat entered
+	else if (!isNaN(opt_lat) && !isNaN(opt_long)) {
+		console.log(opt_long);
+		map.setZoom(17);
+		map.setCenter(new google.maps.LatLng( opt_lat, opt_long ) );
+		createMarker(opt_lat, opt_long);
 	}
 }
 
