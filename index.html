@@ -99,24 +99,59 @@
         </div> -->
 
 <!-- Form -->
-<form class="startform form-inline">
-
+<!-- <form class="startform form-inline"> -->
+<div class="startform form-inline">
+    <p id="missinginfo"></p>
   <!-- <label class="mr-sm-2" for="inlineFormCustomSelect"></label> -->
-  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="select_neighbourhood">
     <option selected>Neighbourhood</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
+    <option value="1">Bayview</option>
+    <option value="2">Bernal Heights</option>
+    <option value="3">Castro/Upper Market</option>
+    <option value="4">Chinatown</option>
+    <option value="5">Crocker Amazon</option>
+    <option value="6">Diamond Heights</option>
+    <option value="7">Downtown/Civic Center</option>
+    <option value="8">Excelsior</option>
+    <option value="9">Financial District</option>
+    <option value="10">Glen Park</option>
+    <option value="11">Golden Gate Park</option>
+    <option value="12">Haight Ashbury</option>
+    <option value="13">Inner Richmond</option>
+    <option value="14">Inner Sunset</option>
+    <option value="15">Lakeshore</option>
+    <option value="16">Marina</option>
+    <option value="17">Mission</option>
+    <option value="18">Nob Hill</option>
+    <option value="19">Noe Valley</option>
+    <option value="20">North Beach</option>
+    <option value="21">Ocean View</option>
+    <option value="22">Outer Mission</option>
+    <option value="23">Outer Richmond</option>
+    <option value="24">Outer Sunset</option>
+    <option value="25">Pacific Heights</option>
+    <option value="26">Parkside</option>
+    <option value="27">Potrero Hill</option>
+    <option value="28">Presidio</option>
+    <option value="29">Presidio Heights</option>
+    <option value="30">Russian Hill</option>
+    <option value="31">Seacliff</option>
+    <option value="32">South of Market</option>
+    <option value="33">Treasure Island/YBI</option>
+    <option value="34">Twin Peaks</option>
+    <option value="35">Visitacion Valley</option>
+    <option value="36">West of Twin Peaks</option>
+    <option value="37">Western Addition</option>
   </select>
 
 
   <!-- <label class="mr-sm-2" for="inlineFormCustomSelect"></label> -->
-  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="select_room">
     <option selected>Rooms Available</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-    <option value="4">Four or more</option>
+    <option value="2">One</option>
+    <option value="3">Two</option>
+    <option value="4">Three</option>
+    <option value="5">Four or more</option>
   </select>
   <input type="Longitude" class="geocodeForm form-control" id="inputLongitude" placeholder="Longitude">
   <input type="Latitude" class="geocodeForm form-control" id="inputLatitude" placeholder="Latitude">
@@ -134,10 +169,15 @@
   </div> -->
 
   <div>
-      <button type="submit" style="margin-top:.5rem"class="btn btn-primary">Optimize</button>
+      <button onclick="optimize()" style="margin-top:.5rem"class="btn btn-primary">Optimize</button>
   </div>
 
-</form>
+<hr>
+<div id="loader" style="display: none" class="loader">Loading...</div>
+    <p id="optprice" class="optprice"><p>
+
+
+<!-- </form> -->
 
       </div>
     </header>

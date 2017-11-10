@@ -21,6 +21,61 @@ Papa.parse("/data/neighbourhoods.csv", {
 	}
 });
 
+var opt_neighbourhood;
+var opt_room;
+var opt_long = null;
+var opt_lat = null;
+var avg_price;
+var lower;
+var upper;
+function optimize() {
+	var a = document.getElementById("select_neighbourhood");
+	opt_neighbourhood = a.options[a.selectedIndex].value;
+	var b = document.getElementById("select_room");
+	opt_room = b.options[b.selectedIndex].value;
+	opt_long = document.getElementById("inputLongitude").value;
+	opt_lat = document.getElementById("inputLatitude").value;
+	console.log(opt_neighbourhood);
+	console.log(opt_room);
+	console.log(opt_long);
+	console.log(opt_lat);
+	document.getElementById("missinginfo").innerHTML = "";
+
+	if (opt_neighbourhood == "Neighbourhood") {
+		document.getElementById("missinginfo").innerHTML = "You must input a neighbourhood.";
+		return;
+	}
+	else if (opt_room == "Rooms Available") {
+		document.getElementById("missinginfo").innerHTML = "You must input the number of rooms available.";
+		return;
+	}
+
+	    Papa.parse("/data/regression_data.csv", {
+	    	download: true,
+	    	complete: function(results) {
+
+				// Calculate upper and lower bounds
+				avg_price = results.data[opt_neighbourhood][opt_room];
+				upper = (Math.round(avg_price + ((opt_room-1) * 10)));
+				lower = (Math.round(avg_price - ((opt_room-1) * 10)));
+
+				// Cute little animation
+				// document.getElementById("loader").style.display = "block";
+				//document.getElementById("loader").style.display = "none";
+
+				document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
+
+				console.log(lower);
+	    	}
+	    });
+
+	// If long or lat not entered optimize based on neighbourhood
+	if (opt_long != "" || opt_lat != "") {
+
+	}
+}
+
+
 var radar_neighbourhood;
 var overall;
 showradar1();
@@ -227,6 +282,7 @@ function radar_parse() {
                 parsed_radar.push(results.data[radar_neighbourhood][i]);
             }
             overall = results.data[radar_neighbourhood][i];
+			overall = (Math.round(overall * 100) / 100);
             graphradar();
             document.getElementById("overallscore").innerHTML = "Overall Score: " + overall;
     		console.log(parsed_radar);
