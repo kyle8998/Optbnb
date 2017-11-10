@@ -9,13 +9,28 @@
      overflow-x: hidden;
  }
 
+ .headsize {
+     padding-top: 7.5em;
+     padding-bottom: 2.5em;
+ }
+
+
  .bg-primary {
    background-color: #FF5A60 !important;
  }
 
  .center {
+     display: block;
      margin: auto;
      width: 50%;
+     padding: 10px;
+     text-align: center;
+ }
+
+ .startform {
+     width: 100%;
+     display: block;
+     margin: auto;
      padding: 10px;
      text-align: center;
  }
@@ -23,6 +38,11 @@
 #opt-button {
     clear: left;
     float: left;
+}
+
+.geocodeForm {
+    max-width: 100px;
+    margin-right: .5rem;
 }
 
 .container2 {

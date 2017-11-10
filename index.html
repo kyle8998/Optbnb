@@ -70,7 +70,7 @@
       </div>
     </nav>
 
-    <header class="bg-primary text-white">
+    <header class="headsize bg-primary text-white">
       <div class="container text-center">
         <h1>Optimize Your Airbnb Listing!</h1>
         <p class="lead">Enter your listing details below</p>
@@ -99,7 +99,7 @@
         </div> -->
 
 <!-- Form -->
-<form class="form-inline center">
+<form class="startform form-inline">
 
   <!-- <label class="mr-sm-2" for="inlineFormCustomSelect"></label> -->
   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
@@ -109,6 +109,7 @@
     <option value="3">Three</option>
   </select>
 
+
   <!-- <label class="mr-sm-2" for="inlineFormCustomSelect"></label> -->
   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
     <option selected>Rooms Available</option>
@@ -117,9 +118,24 @@
     <option value="3">Three</option>
     <option value="4">Four or more</option>
   </select>
+  <input type="Longitude" class="geocodeForm form-control" id="inputLongitude" placeholder="Longitude">
+  <input type="Latitude" class="geocodeForm form-control" id="inputLatitude" placeholder="Latitude">
 
+  <!-- <div>
+      <p class="center">Optional</p>
+</div>
 
-  <button type="submit" class="btn btn-primary">Optimize</button>
+  <div class="center form-group">
+    <label for="exampleInputEmail1">Longitude</label>
+    <input type="Longitude" class="geocodeForm form-control" id="inputLongitude" placeholder="Longitude">
+
+    <label for="exampleInputEmail1">Latitude</label>
+    <input type="Latitude" class="geocodeForm form-control" id="inputLatitude" placeholder="Latitude">
+  </div> -->
+
+  <div>
+      <button type="submit" style="margin-top:.5rem"class="btn btn-primary">Optimize</button>
+  </div>
 
 </form>
 
@@ -128,7 +144,7 @@
 
 
 
-    <section id="map">
+    <section style="height: 23em" id="map">
       <div class="container2">
         <div class="row">
           <div class="col-lg-8 mx-auto">
