@@ -1,19 +1,19 @@
 {
   "title": "OptBnb",
   "name": "OptBnb",
-  "version": "4.0.0-beta.2",
-  "description": "Optimize Your Airbnb Listing",
+  "version": "1.0.0",
+  "description": "Optimize Your Airbnb Listing at the click of a button!",
   "keywords": [
-    "css",
-    "sass",
-    "html",
-    "responsive",
-    "theme",
-    "template"
+    "nodejs",
+    "javascript",
+    "pandas",
+    "jupyter-notebook",
+    "single-page-app",
+    "airbnb"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kyle8998/Airbnb-Optimizer.git"
+    "url": "git+https://github.com/kyle8998/Optbnb.git"
   },
   "author": "Kyle Lim",
   "license": "ISC",

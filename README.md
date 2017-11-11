@@ -75,6 +75,11 @@ data from one perspective so I added the interactive buttons to allow the user
 to change the scope and view different datasets. In the end this worked out
 perfectly as I was able to utilize sleek animations to generate new graphs.
 
+The front end also included all of the text I added to explain my graphs. I
+went in and added enough text that would fit in beside the graph and give the
+website a nicer and detailed feel. I feel like this was the element that really
+made my website seem like a real website.
+
 ##### Back End Functionality
 
 Functionality is the main component to the web application, and I had to think
@@ -102,7 +107,7 @@ coordinates in San Francisco.
 ##### Bonus Stuff
 
 I didn't want to stop working once I just got the basic functionality done. I
-wanted to spice it up!
+wanted to spice it up with something unique!
 
 One interesting thing I thought of was a chat box. When I thought about this
 project I envisioned those websites that have live chat support, and I thought
