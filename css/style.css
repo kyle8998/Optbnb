@@ -10,14 +10,15 @@
  }
 
  .headsize {
-     padding-top: 7.5em;
-     padding-bottom: 2.5em;
+     padding-top: 7em;
+     padding-bottom: 1em;
  }
 
 .optprice {
     font-weight: 700;
     font-size: 2rem;
-    color: #363636;
+    /*color: #363636;*/
+    color:white;
     line-height: 1.125;
 }
 

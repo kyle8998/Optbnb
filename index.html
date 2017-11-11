@@ -73,35 +73,12 @@
     <header class="headsize bg-primary text-white">
       <div class="container text-center">
         <h1>Optimize Your Airbnb Listing!</h1>
-        <p class="lead">Enter your listing details below</p>
-
-        <!-- <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Neighbourhood
-          </button>
-          <div class="form-control dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Neighbourhood1</a>
-            <a class="dropdown-item" href="#">2</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-
-          </div>
-        </div> -->
+        <p class="lead">Enter your neighbourhood or geocoordinates below</p>
 
 <!-- Form -->
 <!-- <form class="startform form-inline"> -->
 <div class="startform form-inline">
-    <p id="missinginfo"></p>
+    <p style="color:black" id="missinginfo"></p>
   <!-- <label class="mr-sm-2" for="inlineFormCustomSelect"></label> -->
   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="select_neighbourhood">
     <option selected>Neighbourhood</option>
@@ -156,18 +133,6 @@
   <input type="Latitude" class="geocodeForm form-control" id="inputLatitude" placeholder="Latitude">
   <input type="Longitude" class="geocodeForm form-control" id="inputLongitude" placeholder="Longitude">
 
-  <!-- <div>
-      <p class="center">Optional</p>
-</div>
-
-  <div class="center form-group">
-    <label for="exampleInputEmail1">Longitude</label>
-    <input type="Longitude" class="geocodeForm form-control" id="inputLongitude" placeholder="Longitude">
-
-    <label for="exampleInputEmail1">Latitude</label>
-    <input type="Latitude" class="geocodeForm form-control" id="inputLatitude" placeholder="Latitude">
-  </div> -->
-
   <div>
       <button onclick="optimize()" style="margin-top:.5rem"class="btn btn-primary">Optimize</button>
   </div>
@@ -184,7 +149,7 @@
 
 
 
-    <section style="height: 23em" id="map">
+    <section style="height: 22em" id="map">
       <div class="container2">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -270,9 +235,9 @@
           <div class="testing">
           <p class="subtitle is-4">How much does a AirBnb cost in my neighbourhood?</p>
           <div class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-            <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-            <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet.</p>
+            <p>The cost of living varies significantly across the world. When isolating the scope down to one city, San Francisco, we found that the cost of living still significantly changed based on what neighbourhood you live in. </p>
+            <p>We have graphed the average cost of living for each San Francisco neighbourhood based on the number of rooms available. The results are quite surprising! Each color on the graph symbolizes a different cost of living relative to the city. Green represents a cheaper area, blue is the average, red is on the expensive side, and black is an outlier due to the lack of data.</p>
+            <p>From the data we can see that places such as Bayview or Crocker Amazon are consistently on the cheap end whereas places such as Russian Hill or South of Market are quite expensive.</p>
           </div>
       </div>
         </div>
@@ -282,16 +247,32 @@
 
 </section>
 
-    <section id="trend2" style="background-color: rgb(242, 241, 239)">
+    <section id="trend2" style="background-color: rgb(242, 241, 239); padding: 50px 0">
 
         <div class="tile is-ancestor">
-        <div style="padding-left: 1em" class="tile is-parent">
+        <div style="padding-left: 4em; padding-right: 4em" class="tile is-parent">
           <article class="tile is-child notification">
-            <p class="title">What does this data mean?</p>
-            <p class="subtitle">With some content</p>
+            <p class="subtitle is-4">Do Ratings Really Matter?</p>
             <div class="content">
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+              <p>The short answer is yes. Ratings are one of the most important factors that a person looks at when looking for a place to stay. Nobody wants to stay in a place where the host has a bad reputation. Always be sure to take care of your guests!</p>
+              <p>We have visualized the average ratings for each neighbourhood in terms of Accuracy, Cleanliness, Check-in, Communication, Location, and Value. The ratings on the graph start at 8/10 to better contrast the different neighbourhoods. From that fact alone you can tell that San Francisco is a highly competitive area where anything below an 8/10 is a big minus.</p>
+              <p>A good way to stand out is to strive for perfection in a lacking area for your neighbourhood. For example Golden Gate Park is lacking a bit in cleanliness. As a host you could put cleanliness at a high priority to stand out in the area.</p>
+              <p class="subtitle is-4">What are the Best and Worst Neighbourhoods?</p>
+              <p> Whether you're looking to invest in buying properties or just a place to stay in San Francisco, you will most likely be looking for a highly rated area. Here are the top three areas with the most positive reviews.</p>
+              <b>Top Three</b>
+              <ul>
+                  <li>Presidio - Overall Score: 97.67/100</li>
+                  <li>Diamond Heights - Overall Score: 97.00/100</li>
+                  <li>Presidio Heights - Overall Score: 96.35/100</li>
+              </ul>
+              <b>Worst Three</b>
+              <ul>
+                  <li>Golden Gate Park - Overall Score: 87.75/100</li>
+                  <li>Downtown/Civic Center - Overall Score: 89.66/100</li>
+                  <li>Bayview - Overall Score: 91.01/100</li>
+              </ul>
+
             </div>
           </article>
         </div>
@@ -350,50 +331,16 @@
                 </div>
 
                 <canvas id="radar_chart" style="max-width:500px; max-height:500px" width="100" height="100"></canvas>
-                <h3 id="overallscore">Overall Rating: 100</h3>
+                <h3 id="overallscore" style="color: #363636" class="optprice">Overall Rating: 100</h3>
                 <!-- <canvas id="scatter" width="300" height="200"></canvas> -->
             </div>
           </article>
         </div>
       </div>
-      <!-- <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
 
-
-
-
-
-             <br>
-
-              <div class="graph_area right_graph">
-                  <canvas id="scatter" width="300" height="300"></canvas>
-              </div>
-
-<br> -->
-
-              <!-- <div class="graph_area left_graph">
-                  <canvas id="line-chart" width="800" height="450"></canvas>
-              </div> -->
-            <!-- <h2>Services we offer</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p> -->
-          <!-- </div>
-        </div>
-      </div> -->
     </section>
 
-    <section id="trend3">
-      <!-- <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-              <div class="graph_area left_graph">
-                  <canvas id="line-chart" width="800" height="450"></canvas>
-              </div>
-            </div>
-        </div>
-      </div> -->
-
-
+    <section style="padding: 50px 0" id="trend3">
 
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
@@ -405,50 +352,25 @@
 
                   <!-- <h1>Trends</h1> -->
                   <h2 style="color:gray">Bed to Bathroom Ratio</h2>
-                  <!-- <button type="button" class="btn btn-info" onclick="showgraph1()">1 Room</button>
-                  <button type="button" class="btn btn-info" onclick="showgraph2()">2 Rooms</button>
-                  <button type="button" class="btn btn-info" onclick="showgraph3()">3 Rooms</button>
-                  <button type="button" class="btn btn-info" onclick="showgraph4()">4+ Rooms</button> -->
-                  <!-- <hr style="height:2pt; visibility:hidden;" /> -->
 
-                  <!-- <div class="col-lg-8 fixed_graph"> -->
-                  <!-- First CoL bar graph -->
-                      <!-- <div id="1room" style="display: none">
-                        <canvas id="col_bar" width="120" height="110"></canvas>
-                      </div>
-
-                      <div id="2room" style="display: none">
-                        <canvas id="col_bar2" width="120" height="100"></canvas>
-                      </div>
-
-                      <div id="3room" style="display: none">
-                        <canvas id="col_bar3" width="120" height="100"></canvas>
-                      </div>
-
-                      <div id="4room" style="display: none">
-                        <canvas id="col_bar4" width="120" height="100"></canvas>
-                      </div>
-
-                  </div> -->
-                  <canvas id="line-chart" width="800" height="450"></canvas>
+                  <canvas id="line-chart" width="700" height="450"></canvas>
 
               </div>
             </article>
           </div>
         </div>
-        <!-- <canvas id="radar_chart" style="max-width:400px; max-height:400px" width="100" height="100"></canvas> -->
-<!-- <canvas id="radar_chart" width="100" height="100"></canvas> -->
+
           <div class="tile is-parent">
             <article class="tile is-child notification">
               <div class="content">
-                <hr style="height:60pt; visibility:hidden;" />
+                <hr style="height:40pt; visibility:hidden;" />
                 <!-- <p class="title">How much does a AirBnb cost in my neighbourhood?</p> -->
                 <div class="testing">
-                <p class="subtitle is-4">How much does a AirBnb cost in my neighbourhood?</p>
+                <p class="subtitle is-4">How Many Bathrooms Should I Provide?</p>
                 <div class="content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-                  <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-                  <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet.</p>
+                  <p>This is something that can vary depending on the guest. You might believe that more bathrooms are always better, but that is not always the case. Sometimes having too many bathrooms may be a nuisance!</p>
+                  <p>We graphed the ratio between rooms to bathrooms and their respective prices. From the data we can see that the ideal amount of bathrooms is usually the number of rooms or one less.</p>
+                  <p>While more bathrooms often lead to more expensive prices, your profit is not always more. For example in a single bedroom listing, the price actually gets cheaper when going up to three or four bathrooms. Additionally as a host, the cost it takes to invest in additional bathroom is more than you think because of the cost and cleaning. Because of that the profit you may make for four bathrooms in a three bedroom listing may be negligible.</p>
                 </div>
             </div>
               </div>

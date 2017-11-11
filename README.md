@@ -58,9 +58,16 @@ All computations were done before any visualization using Pandas and NumPy in Ju
 At this point I had my calculations, and I wanted to figure out a way to
 visualize my data. The one thing I really wanted to include was Google Maps
 because I believe location is the most important factor when finding a place
-to stay.
+to stay. I wanted the experience to be as smooth as possible so I decided to
+do a half and half design between the inputs and the map.
 
-For my graphs I utilized Chart.js.
+For my graphs I utilized Chart.js and Papa Parse to get my computations from my
+Pandas notebook. I wanted to make my charts interactive. I accomplished this
+by utilizing chart.js built in features and adding multiple graphs in one.
+I know that it would be a pretty bad visualization if you only looked at the
+data from one perspective so I added the interactive buttons to allow the user
+to change the scope and view different datasets. In the end this worked out
+perfectly as I was able to utilize sleek animations to generate new graphs.
 
 ##### Back End Functionality
 
