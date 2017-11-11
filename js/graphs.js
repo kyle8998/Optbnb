@@ -72,6 +72,7 @@ function optimize() {
 	    Papa.parse("/data/regression_data.csv", {
 	    	download: true,
 	    	complete: function(results) {
+
 				// Set default geocoordinates for the neighbourhood
 				opt_lat = neighbourhood_lat[opt_neighbourhood];
 				opt_long = neighbourhood_long[opt_neighbourhood];
@@ -84,16 +85,14 @@ function optimize() {
 				// Cute little animation
 				// document.getElementById("loader").style.display = "block";
 				//document.getElementById("loader").style.display = "none";
+				var n = document.getElementById("select_neighbourhood");
+				var n_element = n.options[n.selectedIndex].text;
 
-				document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
+				if (avg_price == 0 || isNaN(avg_price)) document.getElementById("optprice").innerHTML = "Not Enough Data For " + n_element;
+				else document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
+
 				map.setZoom(15);
 				map.setCenter(new google.maps.LatLng( opt_lat, opt_long ) );
-				// location = {lat: 37.7541839478958, long: -122.406513787399};
-				// marker = new google.maps.Marker({
-			    //         map: map,
-			    //         animation: google.maps.Animation.DROP,
-			    //         position: location
-			    //       });
 				createMarker(opt_lat, opt_long);
 
 				// map.panTo(curmarker.position);
@@ -104,10 +103,49 @@ function optimize() {
 
 	// If long and lat entered
 	else if (!isNaN(opt_lat) && !isNaN(opt_long)) {
-		console.log(opt_long);
-		map.setZoom(17);
-		map.setCenter(new google.maps.LatLng( opt_lat, opt_long ) );
-		createMarker(opt_lat, opt_long);
+
+		// Check if in san Francisco
+		if (opt_lat > 37.9 || opt_lat < 37.6 || opt_long > -122.35 || opt_long < -122.6) {
+			document.getElementById("missinginfo").innerHTML = "Geocoordinates Must Be In San Francisco!";
+			return;
+		}
+
+		Papa.parse("/data/geocode_data.csv", {
+	    	download: true,
+	    	complete: function(results) {
+
+				var up_lat = opt_lat + .02;
+				var low_lat = opt_lat - .02;
+				var up_long = opt_long + .02;
+				var low_long = opt_long - .02;
+
+				var price_sum = 0.0;
+				var count = 0;
+
+				console.log(results.data[8705][3])
+				// Loop through all listings and find those in .01 degree radius
+				for(i = 1; i < results.data.length - 2; i++){
+					if ((parseFloat(results.data[i][1]) > low_lat) && (parseFloat(results.data[i][1]) < up_lat) && (parseFloat(results.data[i][2]) > low_long) && (parseFloat(results.data[i][2]) < up_long) && (parseFloat(results.data[i][4]) == (opt_room - 1))) {
+						price_sum += parseFloat(results.data[i][3]);
+						count++;
+					}
+				}
+				avg_price = (price_sum / count);
+				upper = (Math.round(avg_price + ((opt_room-1) * 10)));
+				lower = (Math.round(avg_price - ((opt_room-1) * 10)));
+
+				if (avg_price == 0 || isNaN(avg_price)) document.getElementById("optprice").innerHTML = "Not Enough Data For This Area";
+				else document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
+
+				// Cute little animation
+				// document.getElementById("loader").style.display = "block";
+				//document.getElementById("loader").style.display = "none";
+
+				map.setZoom(17);
+				map.setCenter(new google.maps.LatLng( opt_lat, opt_long ) );
+				createMarker(opt_lat, opt_long);
+	    	}
+	    });
 	}
 }
 
