@@ -35,6 +35,7 @@ function CenterControl(controlDiv, map) {
   // Setup the click event listeners: simply set the map to sf.
   controlUI.addEventListener('click', function() {
     map.setCenter(sf);
+    map.setZoom(12);
   });
 
 }

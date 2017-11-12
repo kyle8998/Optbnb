@@ -27,6 +27,14 @@
     line-height: 1.125;
 }
 
+.estincome {
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #363636;
+    /*color:white;*/
+    line-height: 1.000;
+}
+
  .bg-primary {
    background-color: #FF5A60 !important;
  }
@@ -43,7 +51,7 @@
      width: 100%;
      display: block;
      margin: auto;
-     padding: 10px;
+     padding: 5px;
      text-align: center;
  }
 
@@ -53,7 +61,7 @@
 }
 
 .geocodeForm {
-    max-width: 100px;
+    max-width: 400px;
     margin-right: .5rem;
 }
 
@@ -76,6 +84,12 @@
 
 .graph_area {
     padding: 0px;
+}
+@media screen and (max-width: 650px) {
+    .radarmedia {
+        max-width:350px;
+        max-height:350px;
+    }
 }
 
 @media screen and (min-width: 650px) {
@@ -116,6 +130,11 @@ padding: .75rem;
 
     .media-stretch {
         width: 650px;
+    }
+
+    .radarmedia {
+        max-width:500px;
+        max-height:500px
     }
 
 }

@@ -28,6 +28,12 @@ Node.js, Express, Socket.io
 
 ##### Run
 
+Install Dependencies
+
+```
+npm Install
+```
+
 Run the server
 
 ```
@@ -50,11 +56,11 @@ trends that were both interesting and unique. One would be a general overview
 of everything across the board, another would be an overview of all the
 neighbourhoods, and the last would be an overview of a specific neighbourhood.
 
-Graph 1: Bar Graph of the Average Cost of Living in Each neighbourhood
+Graph 1: Horizontal Bar Graph of the Average Price Based on Bedrooms in Each neighbourhood
 
 Graph 2: Radar Graph of the 6 Review Values For Each neighbourhood
 
-Graph 3: Line Graph of the Bed to Bathroom Ratio Overall
+Graph 3: Line Graph of the Average Price Based on the Bed to Bathroom Ratio Overall
 
 All computations were done before any visualization using Pandas and NumPy in Jupyter Notebook. [View Computations Here](data/Import_Data.ipynb)
 

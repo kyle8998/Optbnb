@@ -138,8 +138,8 @@
     <option value="4">Three</option>
     <option value="5">Four or more</option>
   </select>
-  <input type="Latitude" class="geocodeForm form-control" id="inputLatitude" placeholder="Latitude">
-  <input type="Longitude" class="geocodeForm form-control" id="inputLongitude" placeholder="Longitude">
+  <input type="Latitude" class="geocodeForm form-control" id="inputLatitude" placeholder="Latitude (optional)">
+  <input type="Longitude" class="geocodeForm form-control" id="inputLongitude" placeholder="Longitude (optional)">
 
   <div>
       <button onclick="optimize()" style="margin-top:.5rem"class="btn btn-primary">Optimize</button>
@@ -148,6 +148,7 @@
 <hr>
 <div id="loader" style="display: none" class="loader">Loading...</div>
     <p id="optprice" class="optprice"><p>
+    <p id="estincome" class="estincome"><p>
 
 
 <!-- </form> -->
@@ -157,7 +158,7 @@
 
 
 
-    <section style="height: 22em" id="map">
+    <section style="height: 22.5em" id="map">
       <div class="container2">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -242,7 +243,7 @@
             <div class="content">
 
               <p>The short answer is yes. Ratings are one of the most important factors that a person looks at when looking for a place to stay. Nobody wants to stay in a place where the host has a bad reputation. Always be sure to take care of your guests!</p>
-              <p>We have visualized the average ratings for each neighbourhood in terms of Accuracy, Cleanliness, Check-in, Communication, Location, and Value. The ratings on the graph start at 8/10 to better contrast the different neighbourhoods. From that fact alone you can tell that San Francisco is a highly competitive area where anything below an 8/10 is a big minus.</p>
+              <p>We have visualized the average ratings for each neighbourhood in terms of Accuracy, Cleanliness, Check-in, Communication, Location, and Value. The ratings on the graph start at 8/10 to better contrast the different neighbourhoods. San Francisco is a highly competitive area, and in order to compete as a host, you must strive for high ratings.</p>
               <p>A good way to stand out is to strive for perfection in a lacking area for your neighbourhood. For example Golden Gate Park is lacking a bit in cleanliness. As a host you could put cleanliness at a high priority to stand out in the area.</p>
               <p class="subtitle is-4">What are the Best and Worst Neighbourhoods?</p>
               <p> Whether you're looking to invest in buying properties or just a place to stay in San Francisco, you will most likely be looking for a highly rated area. Here are the top three areas with the most positive reviews.</p>
@@ -316,7 +317,7 @@
                   </div>
                 </div>
 
-                <canvas id="radar_chart" style="max-width:500px; max-height:500px" width="100" height="100"></canvas>
+                <canvas id="radar_chart" class="radarmedia" width="100" height="100"></canvas>
                 <h3 id="overallscore" style="color: #363636" class="optprice">Overall Rating: 100</h3>
                 <!-- <canvas id="scatter" width="300" height="200"></canvas> -->
             </div>

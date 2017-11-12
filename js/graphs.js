@@ -89,7 +89,10 @@ function optimize() {
 				var n_element = n.options[n.selectedIndex].text;
 
 				if (avg_price == 0 || isNaN(avg_price) || avg_price == 10000.0) document.getElementById("optprice").innerHTML = "Not Enough Data For " + n_element;
-				else document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
+				else {
+					document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
+					document.getElementById("estincome").innerHTML = "Estimated Income: $" + lower*7 + " - $" + upper*7 + " per week";
+				}
 
 				map.setZoom(15);
 				map.setCenter(new google.maps.LatLng( opt_lat, opt_long ) );
@@ -123,7 +126,7 @@ function optimize() {
 				var count = 0;
 
 				console.log(results.data[8705][3])
-				// Loop through all listings and find those in .01 degree radius
+				// Loop through all listings and find those in .02 degree radius
 				for(i = 1; i < results.data.length - 2; i++){
 					if ((parseFloat(results.data[i][1]) > low_lat) && (parseFloat(results.data[i][1]) < up_lat) && (parseFloat(results.data[i][2]) > low_long) && (parseFloat(results.data[i][2]) < up_long) && (parseFloat(results.data[i][4]) == (opt_room - 1))) {
 						price_sum += parseFloat(results.data[i][3]);
@@ -135,15 +138,22 @@ function optimize() {
 				lower = (Math.round(avg_price - ((opt_room-1) * 10)));
 
 				if (avg_price == 0 || isNaN(avg_price)) document.getElementById("optprice").innerHTML = "Not Enough Data For This Area";
-				else document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
-
+				else {
+					document.getElementById("optprice").innerHTML = "Optimal Price: $" + lower + " - $" + upper + " per night";
+					document.getElementById("estincome").innerHTML = "Estimated Income: $" + lower*7 + " - $" + upper*7 + " per week";
+				}
 				// Cute little animation
 				// document.getElementById("loader").style.display = "block";
 				//document.getElementById("loader").style.display = "none";
 
+				// Zoom and center map on coordinates
 				map.setZoom(17);
 				map.setCenter(new google.maps.LatLng( opt_lat, opt_long ) );
 				createMarker(opt_lat, opt_long);
+
+				// Reset neighbourhood if coordinates
+				var temp="Neighbourhood";
+    			$("#select_neighbourhood").val(temp);
 	    	}
 	    });
 	}
