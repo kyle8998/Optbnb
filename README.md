@@ -102,7 +102,9 @@ For my Google Maps functionality, I wanted it to go to the location and create
 a marker when you optimize the price. To accomplish this I set a default
 coordinate value for each neighbourhood, so if the user only inputs a
 neighbourhood it will go to the center of the neighbourhood. If the user inputs
-coordinates, it will go directly to those coordinates and zoom in.
+coordinates, it will go directly to those coordinates and zoom in. I really
+wanted to highlight the neighbourhoods when zooming in, but due to the lack of
+time I decided just to set a center coordinate.
 
 Additionally because the dataset only included San Francisco data, I did not
 want the user to enter coordinates that were not in San Francisco. To do this
@@ -123,3 +125,8 @@ the web app will most likely not be used my many people at once so it was just
 a fun task for me to do. I used socket.io to keep track of people connecting
 to the web app and used jquery functions to send their messages to everyone
 on the site.
+
+Another fun thing I added was a custom logo. I originally just going to use the
+default Airbnb logo, but I wanted a look that was similar, but not identical.
+I designed something that kind of looked like the logo, but made it my own. I
+think the end result was great, and I'm glad I went with this option!
