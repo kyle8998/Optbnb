@@ -1,5 +1,7 @@
 # Optbnb
 
+[Click here to access Optbnb!](https://optbnb.herokuapp.com/)
+
 Optimize and compare your Airbnb listing at a click of a button! Using real data, view the hottest trends and data in an exciting visual format.
 
 Capital One Summit for Software Engineers Submission created by Kyle Lim.
